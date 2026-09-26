@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 27 15:10:16 2026
-
-@author: MUEF2360
-"""
 
 # ============================================================
 # Programming Task: Dataset-Based Face Matching Using SIFT
