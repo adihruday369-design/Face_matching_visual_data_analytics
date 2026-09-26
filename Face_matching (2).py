@@ -1,6 +1,6 @@
 
 # ============================================================
-# Programming Task: Dataset-Based Face Matching Using SIFT
+#  Dataset-Based Face Matching Using SIFT
 # Dataset: LFW (Labeled Faces in the Wild)
 # ============================================================
 
@@ -39,9 +39,7 @@ print("Number of subjects:", len(target_names))
 # 2. Create SIFT detector
 # ------------------------------------------------------------
 
-# TODO:
-# Create a SIFT feature detector
-#
+
 sift = cv2.SIFT_create()
 
 
@@ -79,7 +77,7 @@ def extract_sift_features(images, sift):
     return all_descriptors
 
 
-# TODO:
+
 descriptors = extract_sift_features(images, sift)
 
 
@@ -125,7 +123,7 @@ def generate_face_pairs(labels, descriptors, num_pairs=1000):
     return pairs, pair_labels
 
 
-#TODO:
+
 pairs, pair_labels = generate_face_pairs(labels, descriptors, num_pairs=1000)
 
 
@@ -193,14 +191,7 @@ for desc1, desc2 in pairs:
 # 7. Determine matching threshold
 # ------------------------------------------------------------
 
-# TODO:
-# Determine an appropriate threshold using
-# genuine and impostor matching scores.
-#
-# A pair is classified as:
-#
-#     MATCH     -> score >= threshold
-#     NON-MATCH -> score < threshold
+
 
 threshold = 20
 
@@ -223,9 +214,7 @@ for score in scores:
 # 9. Evaluate the face-matching system
 # ------------------------------------------------------------
 
-# TODO:
-# Calculate:
-#
+
 accuracy = accuracy_score(pair_labels, predictions)
 # )
 #
@@ -249,7 +238,6 @@ f1 = f1_score(
 # 10. Display evaluation results
 # ------------------------------------------------------------
 
-# TODO:
 print("--------------------------------")
 print("SIFT Face Matching Performance")
 print("--------------------------------")
@@ -259,23 +247,3 @@ print("Recall   :", recall)
 print("F1-score :", f1)
 
 
-# ------------------------------------------------------------
-# Expected Tasks
-# ------------------------------------------------------------
-#
-# Complete the TODO sections to:
-#
-# 1. Load the LFW biometric face dataset.
-# 2. Extract SIFT features from every face image.
-# 3. Generate genuine and impostor face pairs.
-# 4. Match SIFT descriptors using a feature matcher.
-# 5. Apply Lowe's ratio test.
-# 6. Determine a suitable matching threshold.
-# 7. Classify face pairs as MATCH/NON-MATCH.
-# 8. Evaluate the system using:
-#       - Accuracy
-#       - Precision
-#       - Recall
-#       - F1-score
-#
-# ------------------------------------------------------------
